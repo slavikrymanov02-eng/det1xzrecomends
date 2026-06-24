@@ -13,11 +13,12 @@
 
 <header class="hero">
     <h1>DET1XZ RECOMMENDS</h1>
-    <p>Игровые рекомендации • Инди • Обзоры</p>
+    <p>Игровые обзоры • Инди • Рекомендации</p>
 
     <div class="buttons">
-        <a href="https://store.steampowered.com/curator/46152420-Det1xz-Recommends/" class="btn">Steam Curator</a>
+        <a href="https://store.steampowered.com/curator/46152420-Det1xz-Recommends/" class="btn">Steam</a>
         <a href="https://t.me/iamdetixzka" class="btn glow">Telegram</a>
+        <a href="https://discord.gg/Qxvn7Pc8gg" class="btn">Discord</a>
     </div>
 </header>
 
@@ -25,32 +26,48 @@
 
     <div class="card pending">
         <h3>Garry's Mod</h3>
-        <p>Песочница • Моды • Онлайн</p>
+        <p>Песочница • Моды</p>
         <span>🟡 На проверке</span>
     </div>
 
     <div class="card recommended">
         <h3>Bonelab</h3>
-        <p>VR • Физика • Экшен</p>
+        <p>VR • Физика</p>
         <span>🟢 Рекомендуем</span>
     </div>
 
     <div class="card pending">
         <h3>Half-Life 2</h3>
-        <p>Классика • Сюжет</p>
+        <p>Классика</p>
         <span>🟡 На проверке</span>
     </div>
 
 </section>
 
-<section class="info">
-    <h2>Для разработчиков</h2>
-    <p>Отправляйте игры через Steam Curator Connect или пишите в Telegram.</p>
+<section class="form-section">
+
+    <h2>🎮 Отправить игру на обзор</h2>
+    <p class="sub">Разработчики могут оставить заявку через сайт</p>
+
+    <div class="form-card">
+
+        <input id="game" placeholder="Название игры">
+        <input id="steam" placeholder="Steam ссылка">
+        <input id="telegram" placeholder="@telegram">
+        <textarea id="desc" placeholder="Описание"></textarea>
+
+        <button onclick="send()">Отправить</button>
+
+        <p id="status"></p>
+
+    </div>
+
 </section>
 
 <footer>
     DET1XZ RECOMMENDS © 2026
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
