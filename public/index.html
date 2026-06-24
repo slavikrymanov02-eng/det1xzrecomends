@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Det1xz Recommends</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Det1xz Recommends</h1>
+    <p>Steam Curator</p>
+</header>
+
+<section class="hero">
+    <h2>Добро пожаловать</h2>
+
+    <p>
+        Отправляйте свои игры на обзор или следите
+        за новыми рекомендациями.
+    </p>
+
+    <a
+        href="https://store.steampowered.com/curator/46152420-Det1xz-Recommends/"
+        target="_blank"
+        class="btn"
+    >
+        Steam Curator
+    </a>
+</section>
+
+<section class="socials">
+
+    <h2>Наши соцсети</h2>
+
+    <div class="social-buttons">
+
+        <a href="https://t.me/iamdetixzka" target="_blank">
+            Telegram
+        </a>
+
+        <a href="https://discord.gg/Qxvn7Pc8gg" target="_blank">
+            Discord
+        </a>
+
+        <a href="https://www.youtube.com/@Det1xz2024" target="_blank">
+            YouTube
+        </a>
+
+    </div>
+
+</section>
+
+<section class="form-section">
+
+    <h2>Отправить игру на обзор</h2>
+
+    <form id="gameForm">
+
+        <input
+            type="text"
+            id="game"
+            placeholder="Название игры"
+            required
+        >
+
+        <input
+            type="url"
+            id="steam"
+            placeholder="Ссылка Steam"
+            required
+        >
+
+        <input
+            type="text"
+            id="telegram"
+            placeholder="@telegram"
+            required
+        >
+
+        <textarea
+            id="description"
+            placeholder="Описание игры"
+            required
+        ></textarea>
+
+        <button type="submit">
+            Отправить
+        </button>
+
+    </form>
+
+    <p id="status"></p>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
