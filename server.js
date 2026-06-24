@@ -1,5 +1,4 @@
 require("dotenv").config();
-
 const express = require("express");
 const cors = require("cors");
 
@@ -13,28 +12,21 @@ app.post("/submit", async (req, res) => {
     try {
         const { game, steam, telegram, description } = req.body;
 
-        const message = `
-🎮 Новая заявка на обзор
+        const message =
+`🎮 НОВАЯ ЗАЯВКА
 
 🎯 Игра: ${game}
-
-🔗 Steam:
-${steam}
-
-👤 Telegram:
-${telegram}
+🔗 Steam: ${steam}
+👤 TG: ${telegram}
 
 📝 Описание:
-${description}
-`;
+${description || "нет"}`;
 
-        const response = await fetch(
+        const tg = await fetch(
             `https://api.telegram.org/bot${process.env.BOT_TOKEN}/sendMessage`,
             {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
+                headers: {"Content-Type":"application/json"},
                 body: JSON.stringify({
                     chat_id: process.env.CHAT_ID,
                     text: message
@@ -42,27 +34,15 @@ ${description}
             }
         );
 
-        const data = await response.json();
+        const data = await tg.json();
 
-        if (!data.ok) {
-            throw new Error("Telegram API Error");
-        }
+        if (!data.ok) throw new Error("Telegram error");
 
-        res.json({
-            success: true
-        });
+        res.json({ success: true });
 
-    } catch (error) {
-        console.error(error);
-
-        res.status(500).json({
-            success: false
-        });
+    } catch (e) {
+        res.json({ success: false });
     }
 });
 
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-    console.log(`Server started on port ${PORT}`);
-});
+app.listen(process.env.PORT || 3000);
